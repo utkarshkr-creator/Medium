@@ -1,19 +1,12 @@
 "use client"
 import Link from "next/link";
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { SignupInput } from "utkarsh-medium";
 import { BACKEND_URL } from "../../config";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 export const Auth = ({ type }: { type: "signup" | "signin" }) => {
   const router = useRouter();
-  useEffect(() => {
-    if (localStorage.getItem(("token"))) {
-      alert("Aleady log in");
-      router.push('/blogs');
-    }
-  }, [])
-
   const [postInputs, setPostInputs] = useState<SignupInput>({
     'name': "",
     'username': "",

@@ -9,7 +9,8 @@ export interface Blog {
   "id": string;
   "author": {
     "name": string
-  }
+  };
+  "createdAt": string;
 }
 
 export function useBlog({ id }: { id: string }) {
@@ -37,6 +38,6 @@ export default function useBlogs() {
     }).then(response => {
       setBlogs(response.data.blogs);
     })
-  }, [])
+  })
   return { blogs }
 }

@@ -2,9 +2,9 @@
 import { Avatar } from "@/components/BlogCard";
 import { useBlog } from "@/components/BlogsFetch";
 
-export default async function Page({ params }: { params: { id: string } }) {
+export default function Page({ params }: { params: { id: string } }) {
   const id = params.id;
-  const { blog } = await useBlog({ id });
+  const { blog } = useBlog({ id });
 
   return <div className="flex justify-center">
     <div className="grid grid-cols-12 px-10 w-full pt-200 max-w-screen-xl pt-12">
@@ -13,7 +13,8 @@ export default async function Page({ params }: { params: { id: string } }) {
           {blog?.title}
         </div>
         <div className="text-slate-500 pt-2">
-          {blog ? `Post on ${new Date(blog?.createdAt)}` : ""}
+
+          {`Post on ${blog?.createdAt}`}
         </div>
         <div className="pt-4">
           {blog?.content}

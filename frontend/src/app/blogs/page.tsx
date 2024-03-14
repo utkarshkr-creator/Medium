@@ -2,8 +2,8 @@
 import { BlogCard } from "@/components/BlogCard";
 import useBlogs from "@/components/BlogsFetch"
 
-export default async function Page() {
-  const { blogs } = await useBlogs();
+export default function Page() {
+  const { blogs } = useBlogs();
   return <div className="flex justify-center">
     <div>
       {blogs && blogs.map(blog =>
@@ -13,6 +13,7 @@ export default async function Page() {
           title={blog.title}
           content={blog.content}
           publishedData={blog.createdAt}
+          key={blog.id}
         />)}
     </div>
   </div>

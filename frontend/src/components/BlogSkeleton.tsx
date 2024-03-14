@@ -1,3 +1,4 @@
+'use client'
 import { Circle } from "./BlogCard"
 
 export const BlogSkeleton = () => {
